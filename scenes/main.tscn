@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://qulfdwtbka3i"]
+[gd_scene load_steps=5 format=3 uid="uid://qulfdwtbka3i"]
+
+[ext_resource type="PackedScene" uid="uid://dmxw0owi13agj" path="res://scenes/train.tscn" id="1_cighe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_auwxt"]
 size = Vector3(60, 2, 60)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfewa"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.745098, 0.439216, 0.0745098, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_5m10p"]
+material = SubResource("StandardMaterial3D_mfewa")
 size = Vector3(60, 2, 60)
 
 [node name="Main" type="Node3D"]
+
+[node name="Train" parent="." instance=ExtResource("1_cighe")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -16,3 +25,6 @@ shape = SubResource("BoxShape3D_auwxt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_5m10p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0414049, 0.999142, 0, -0.999142, -0.0414049, 0, 17.2781, 0)
