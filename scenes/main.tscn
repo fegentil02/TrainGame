@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://qulfdwtbka3i"]
+[gd_scene load_steps=23 format=3 uid="uid://qulfdwtbka3i"]
 
 [ext_resource type="PackedScene" uid="uid://dmxw0owi13agj" path="res://scenes/train.tscn" id="1_cighe"]
 [ext_resource type="Material" uid="uid://cyfttqv118ojk" path="res://materials/black.tres" id="2_5ds58"]
@@ -8,6 +8,14 @@
 [ext_resource type="Material" uid="uid://bxkqtx2ah0ww8" path="res://materials/coal.tres" id="6_xpyht"]
 [ext_resource type="Material" uid="uid://cu3sawwybdhrn" path="res://materials/gold.tres" id="7_l1dvn"]
 [ext_resource type="Texture2D" uid="uid://cn4jxn7hygvmn" path="res://materials/skybox.jpg" id="8_x17m2"]
+[ext_resource type="PackedScene" uid="uid://cmwh5i2cwj11j" path="res://models/cactus-1.glb" id="9_7datk"]
+[ext_resource type="PackedScene" uid="uid://dta7q8iusruqw" path="res://models/cactus-2.glb" id="10_pp34y"]
+[ext_resource type="PackedScene" uid="uid://dcbyb4ukvuvfs" path="res://models/cactus-3.glb" id="11_7jgtp"]
+[ext_resource type="PackedScene" uid="uid://8cipitajwxn" path="res://models/cactus-4.glb" id="12_t50bs"]
+[ext_resource type="PackedScene" uid="uid://q4dofhemxa6a" path="res://models/cactus-5.glb" id="13_ycipk"]
+[ext_resource type="PackedScene" uid="uid://d2d1o0vun4rt3" path="res://models/cactus-6.glb" id="14_ckbjt"]
+[ext_resource type="PackedScene" uid="uid://dj3m48jauu7o8" path="res://models/dead.glb" id="15_fxh4q"]
+[ext_resource type="PackedScene" uid="uid://n8hundnr4fba" path="res://models/tree.glb" id="16_x24uq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_auwxt"]
 size = Vector3(60, 2, 60)
@@ -158,7 +166,7 @@ material_override = ExtResource("4_4juyl")
 material_override = ExtResource("3_xa4ej")
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1, 0)
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_auwxt")
@@ -172,6 +180,1132 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i56wg")
+
+[node name="collection" type="Node3D" parent="."]
+
+[node name="objects" type="Node3D" parent="collection"]
+
+[node name="cactus-1" parent="collection/objects" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects2" type="Node3D" parent="collection"]
+transform = Transform3D(0.657783, 0, -0.753208, 0, 1, 0, 0.753208, 0, 0.657783, -6.65023, 0, 58.1061)
+
+[node name="cactus-1" parent="collection/objects2" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects2" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects2" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects2" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects2" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects2" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects2" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects3" type="Node3D" parent="collection"]
+transform = Transform3D(-0.422745, 0, -0.906249, 0, 1, 0, 0.906249, 0, -0.422745, -76.4915, 0, 13.3523)
+
+[node name="cactus-1" parent="collection/objects3" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects3" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects3" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects3" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects3" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects3" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects3" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects4" type="Node3D" parent="collection"]
+transform = Transform3D(-0.960668, 0, -0.2777, 0, 1, 0, 0.2777, 0, -0.960668, -126.339, 0, -17.2385)
+
+[node name="cactus-1" parent="collection/objects4" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects4" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects4" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects4" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects4" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects4" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects4" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects5" type="Node3D" parent="collection"]
+transform = Transform3D(-0.246627, 0, -0.96911, 0, 1, 0, 0.96911, 0, -0.246627, 97.579, 0, 67.6505)
+
+[node name="cactus-1" parent="collection/objects5" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects5" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects5" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects5" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects5" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects5" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects5" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects6" type="Node3D" parent="collection"]
+transform = Transform3D(-0.892168, 0, -0.451703, 0, 1, 0, 0.451703, 0, -0.892168, 42.9078, 0, 46.8751)
+
+[node name="cactus-1" parent="collection/objects6" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects6" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects6" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects6" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects6" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects6" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects6" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects7" type="Node3D" parent="collection"]
+transform = Transform3D(-0.773995, 0, 0.633192, 0, 1, 0, -0.633192, 0, -0.773995, 103.504, 0, -9.7713)
+
+[node name="cactus-1" parent="collection/objects7" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects7" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects7" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects7" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects7" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects7" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects7" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects8" type="Node3D" parent="collection"]
+transform = Transform3D(0.506094, 0, 0.862478, 0, 1, 0, -0.862478, 0, 0.506094, 171.653, 0, 270.349)
+
+[node name="cactus-1" parent="collection/objects8" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1869, 0, -196.408)
+
+[node name="cactus-1" parent="collection/objects8/objects" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects2" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(0.657783, 0, -0.753207, 0, 1, 0, 0.753207, 0, 0.657783, 63.5367, 0, -138.302)
+
+[node name="cactus-1" parent="collection/objects8/objects2" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects2" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects2" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects2" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects2" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects2" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects2" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects3" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.422745, 0, -0.906248, 0, 1, 0, 0.906248, 0, -0.422745, -6.30459, 0, -183.056)
+
+[node name="cactus-1" parent="collection/objects8/objects3" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects3" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects3" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects3" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects3" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects3" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects3" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects4" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.960667, 0, -0.2777, 0, 1, 0, 0.2777, 0, -0.960667, -56.1519, 0, -213.647)
+
+[node name="cactus-1" parent="collection/objects8/objects4" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects4" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects4" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects4" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects4" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects4" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects4" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects5" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.246627, 0, -0.96911, 0, 1, 0, 0.96911, 0, -0.246627, 167.766, 0, -128.758)
+
+[node name="cactus-1" parent="collection/objects8/objects5" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects5" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects5" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects5" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects5" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects5" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects5" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects6" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.892168, 0, -0.451703, 0, 1, 0, 0.451703, 0, -0.892168, 113.095, 0, -149.533)
+
+[node name="cactus-1" parent="collection/objects8/objects6" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects6" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects6" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects6" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects6" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects6" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects6" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects7" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.773995, 0, 0.633191, 0, 1, 0, -0.633191, 0, -0.773995, 173.691, 0, -206.179)
+
+[node name="cactus-1" parent="collection/objects8/objects7" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects7" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects7" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects7" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects7" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects7" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects7" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects8" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(-0.0321958, 0, 0.999482, 0, 1, 0, -0.999482, 0, -0.0321958, 215.63, 0, -246.942)
+
+[node name="cactus-1" parent="collection/objects8/objects8" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects8" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects8" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects8" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects8" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects8" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects8" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects9" type="Node3D" parent="collection/objects8"]
+transform = Transform3D(0.808812, 0, -0.588068, 0, 1, 0, 0.588068, 0, 0.808812, 216.913, 0, -338.559)
+
+[node name="cactus-1" parent="collection/objects8/objects9" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1869, 0, -196.408)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects2" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(0.657783, 0, -0.753207, 0, 1, 0, 0.753207, 0, 0.657783, 63.5367, 0, -138.302)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects2" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects2" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects2" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects2" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects2" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects2" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects2" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects2" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects3" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.422745, 0, -0.906248, 0, 1, 0, 0.906248, 0, -0.422745, -6.30459, 0, -183.056)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects3" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects3" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects3" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects3" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects3" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects3" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects3" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects3" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects4" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.960667, 0, -0.2777, 0, 1, 0, 0.2777, 0, -0.960667, -56.1519, 0, -213.647)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects4" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects4" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects4" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects4" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects4" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects4" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects4" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects4" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects5" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.246627, 0, -0.96911, 0, 1, 0, 0.96911, 0, -0.246627, 167.766, 0, -128.758)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects5" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects5" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects5" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects5" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects5" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects5" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects5" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects5" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects6" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.892168, 0, -0.451703, 0, 1, 0, 0.451703, 0, -0.892168, 113.095, 0, -149.533)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects6" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects6" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects6" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects6" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects6" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects6" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects6" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects6" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects7" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.773995, 0, 0.633191, 0, 1, 0, -0.633191, 0, -0.773995, 173.691, 0, -206.179)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects7" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects7" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects7" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects7" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects7" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects7" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects7" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects7" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
+
+[node name="objects8" type="Node3D" parent="collection/objects8/objects9"]
+transform = Transform3D(-0.0321958, 0, 0.999482, 0, 1, 0, -0.999482, 0, -0.0321958, 215.63, 0, -246.942)
+
+[node name="cactus-1" parent="collection/objects8/objects9/objects8" instance=ExtResource("9_7datk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.6992)
+
+[node name="cactus-2" parent="collection/objects8/objects9/objects8" instance=ExtResource("10_pp34y")]
+transform = Transform3D(0.64403, 0, -0.765, 0, 1, 0, 0.765, 0, 0.64403, 12.2049, 0, 0)
+
+[node name="cactus-3" parent="collection/objects8/objects9/objects8" instance=ExtResource("11_7jgtp")]
+transform = Transform3D(0.945456, 0, -0.32575, 0, 1, 0, 0.32575, 0, 0.945456, -1.76519, 0, -3.81711)
+
+[node name="cactus-4" parent="collection/objects8/objects9/objects8" instance=ExtResource("12_t50bs")]
+transform = Transform3D(0.989676, 0, 0.14332, 0, 1, 0, -0.14332, 0, 0.989676, 8.32292, 0, -26.583)
+
+[node name="cactus-5" parent="collection/objects8/objects9/objects8" instance=ExtResource("13_ycipk")]
+transform = Transform3D(0.837881, 0, -0.545853, 0, 1, 0, 0.545853, 0, 0.837881, -33.0985, 0, 0)
+
+[node name="cactus-6" parent="collection/objects8/objects9/objects8" instance=ExtResource("14_ckbjt")]
+transform = Transform3D(0.860635, 0, -0.509222, 0, 1, 0, 0.509222, 0, 0.860635, 11.6614, 0, -17.262)
+
+[node name="dead" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1818, 0, 0)
+
+[node name="dead2" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.694)
+
+[node name="dead3" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0172, 0, 0)
+
+[node name="dead4" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6816)
+
+[node name="dead5" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.6525)
+
+[node name="dead6" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.568734, 0, -0.822521, 0, 1, 0, 0.822521, 0, 0.568734, 24.6129, 0, -8.55292)
+
+[node name="dead7" parent="collection/objects8/objects9/objects8" instance=ExtResource("15_fxh4q")]
+transform = Transform3D(0.904723, 0, 0.426, 0, 1, 0, -0.426, 0, 0.904723, 13.2757, 0, 14.1864)
+
+[node name="tree" parent="collection/objects8/objects9/objects8" instance=ExtResource("16_x24uq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699905, 0, -19.1958)
 
 [editable path="Train"]
 [editable path="Train/Head/Pivot/trem"]
