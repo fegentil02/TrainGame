@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cctbl1s70m8jd"]
+
+[ext_resource type="Script" path="res://scenes/Wagon.gd" id="1_hrqos"]
+[ext_resource type="PackedScene" uid="uid://hfboy5ihlc85" path="res://models/vagao-carvao.glb" id="2_dpe5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijhly"]
+size = Vector3(2, 2, 3.5)
+
+[node name="Carvão" type="Node3D"]
+
+[node name="wagon" type="CharacterBody3D" parent="."]
+script = ExtResource("1_hrqos")
+
+[node name="Pivot" type="Node3D" parent="wagon"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wagon/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.814867)
+shape = SubResource("BoxShape3D_ijhly")
+
+[node name="vagao-carvao" parent="wagon/Pivot" instance=ExtResource("2_dpe5o")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfrom5r0ia01r"
-path="res://.godot/imported/trem.glb-3c85405696eaf9d30a0c8d0b62f6d030.scn"
+uid="uid://hfboy5ihlc85"
+path="res://.godot/imported/vagao-carvao.glb-b61a67d0b3f108b37d7aece73b440147.scn"
 
 [deps]
 
-source_file="res://models/trem.glb"
-dest_files=["res://.godot/imported/trem.glb-3c85405696eaf9d30a0c8d0b62f6d030.scn"]
+source_file="res://models/vagao-carvao.glb"
+dest_files=["res://.godot/imported/vagao-carvao.glb-b61a67d0b3f108b37d7aece73b440147.scn"]
 
 [params]
 

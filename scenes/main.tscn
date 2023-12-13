@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://qulfdwtbka3i"]
+[gd_scene load_steps=6 format=3 uid="uid://qulfdwtbka3i"]
 
 [ext_resource type="PackedScene" uid="uid://dmxw0owi13agj" path="res://scenes/train.tscn" id="1_cighe"]
+[ext_resource type="PackedScene" uid="uid://cctbl1s70m8jd" path="res://scenes/carvão.tscn" id="2_coj7g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_auwxt"]
 size = Vector3(60, 2, 60)
@@ -16,6 +17,9 @@ size = Vector3(60, 2, 60)
 [node name="Main" type="Node3D"]
 
 [node name="Train" parent="." instance=ExtResource("1_cighe")]
+
+[node name="Carvão" parent="Train" instance=ExtResource("2_coj7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.7)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

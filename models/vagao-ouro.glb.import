@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfrom5r0ia01r"
-path="res://.godot/imported/trem.glb-3c85405696eaf9d30a0c8d0b62f6d030.scn"
+uid="uid://c7jki0bywqr45"
+path="res://.godot/imported/vagao-ouro.glb-b029df785d2dc48d9cd04dc7bbc0d233.scn"
 
 [deps]
 
-source_file="res://models/trem.glb"
-dest_files=["res://.godot/imported/trem.glb-3c85405696eaf9d30a0c8d0b62f6d030.scn"]
+source_file="res://models/vagao-ouro.glb"
+dest_files=["res://.godot/imported/vagao-ouro.glb-b029df785d2dc48d9cd04dc7bbc0d233.scn"]
 
 [params]
 
