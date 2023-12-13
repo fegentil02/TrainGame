@@ -1,28 +1,139 @@
-[gd_scene load_steps=6 format=3 uid="uid://qulfdwtbka3i"]
+[gd_scene load_steps=15 format=3 uid="uid://qulfdwtbka3i"]
 
 [ext_resource type="PackedScene" uid="uid://dmxw0owi13agj" path="res://scenes/train.tscn" id="1_cighe"]
+[ext_resource type="Material" uid="uid://cyfttqv118ojk" path="res://materials/black.tres" id="2_5ds58"]
 [ext_resource type="PackedScene" uid="uid://cctbl1s70m8jd" path="res://scenes/carvão.tscn" id="2_coj7g"]
+[ext_resource type="Material" uid="uid://23ai0intu1tr" path="res://materials/metal.tres" id="3_xa4ej"]
+[ext_resource type="Material" uid="uid://ccxn64q2u463w" path="res://materials/red.tres" id="4_4juyl"]
+[ext_resource type="Material" uid="uid://bxkqtx2ah0ww8" path="res://materials/coal.tres" id="6_xpyht"]
+[ext_resource type="Material" uid="uid://cu3sawwybdhrn" path="res://materials/gold.tres" id="7_l1dvn"]
+[ext_resource type="Texture2D" uid="uid://cn4jxn7hygvmn" path="res://materials/skybox.jpg" id="8_x17m2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_auwxt"]
 size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfewa"]
 vertex_color_is_srgb = true
-albedo_color = Color(0.745098, 0.439216, 0.0745098, 1)
+albedo_color = Color(0.745098, 0.815686, 0.0745098, 1)
+metallic_specular = 0.15
 
 [sub_resource type="BoxMesh" id="BoxMesh_5m10p"]
 material = SubResource("StandardMaterial3D_mfewa")
 size = Vector3(60, 2, 60)
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g1pb0"]
+panorama = ExtResource("8_x17m2")
+
+[sub_resource type="Sky" id="Sky_i3q4l"]
+sky_material = SubResource("PanoramaSkyMaterial_g1pb0")
+
+[sub_resource type="Environment" id="Environment_i56wg"]
+background_mode = 2
+background_color = Color(1, 0.615686, 0.133333, 1)
+background_energy_multiplier = 0.28
+sky = SubResource("Sky_i3q4l")
+sky_custom_fov = 90.0
+fog_enabled = true
+fog_light_color = Color(0.976471, 0.792157, 0.462745, 1)
+fog_light_energy = 0.21
+fog_sun_scatter = 0.15
+fog_density = 0.0311
+fog_sky_affect = 0.0
+fog_height_density = 0.9505
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(1, 1, 0.254902, 1)
+volumetric_fog_length = 3.0
+volumetric_fog_detail_spread = 0.5
+volumetric_fog_sky_affect = 0.5
+
 [node name="Main" type="Node3D"]
 
 [node name="Train" parent="." instance=ExtResource("1_cighe")]
 
+[node name="trem" parent="Train/Head/Pivot" index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.00185513, 0.5, 0.00583136)
+
+[node name="eixo meio" parent="Train/Head/Pivot/trem" index="0"]
+transform = Transform3D(3.8633, 0, 0, 0, 0.666405, 0, 0, 0, 12.6759, 0.0157555, -0.80299, 9.67031)
+
+[node name="cabine" parent="Train/Head/Pivot/trem" index="3"]
+transform = Transform3D(3.4164, 0, 0, 0, 4.86957, 0, 0, 0, 3.85611, 0.0168707, 6.64827, 0)
+material_override = ExtResource("2_5ds58")
+
+[node name="cilindro corpo" parent="Train/Head/Pivot/trem" index="4"]
+transform = Transform3D(2.84636, 0, 0, 0, 2.84636, 0, 0, 0, 2.84636, 0.0186774, 4.25798, 5.71941)
+material_override = ExtResource("3_xa4ej")
+
+[node name="tampa" parent="Train/Head/Pivot/trem" index="5"]
+transform = Transform3D(5.8168, 0, 0, 0, -0.00683432, -5.8168, 0, 5.8168, -0.00683432, 0.0343432, 4.1864, 19.7655)
+material_override = ExtResource("3_xa4ej")
+
+[node name="base" parent="Train/Head/Pivot/trem" index="6"]
+material_override = ExtResource("4_4juyl")
+
+[node name="rodas frente" parent="Train/Head/Pivot/trem" index="7"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas meio" parent="Train/Head/Pivot/trem" index="8"]
+transform = Transform3D(3.86901, 0, 0, 0, 0.666405, 0, 0, 0, 12.6759, 0.0168731, -0.825382, 9.6806)
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas traseira" parent="Train/Head/Pivot/trem" index="9"]
+transform = Transform3D(3.86901, 0, 0, 0, 0.666405, 0, 0, 0, 12.6759, 0.0331327, -0.886632, -1.33636)
+material_override = ExtResource("2_5ds58")
+
+[node name="cilindro 1" parent="Train/Head/Pivot/trem" index="10"]
+material_override = ExtResource("3_xa4ej")
+
+[node name="cilindro 2" parent="Train/Head/Pivot/trem" index="11"]
+material_override = ExtResource("3_xa4ej")
+
+[node name="farol" parent="Train/Head/Pivot/trem" index="12"]
+material_override = ExtResource("3_xa4ej")
+
+[node name="tira neve" parent="Train/Head/Pivot/trem" index="13"]
+transform = Transform3D(2.02535, 0, 0, 0, 2.02535, 0, 0, 0, 2.02535, -0.00527722, -0.0384359, 19.1744)
+material_override = ExtResource("3_xa4ej")
+
+[node name="vapor" parent="Train/Head/Pivot/trem" index="14"]
+transform = Transform3D(1.4873, 0, 0, 0, 1.4873, 0, 0, 0, 1.4873, -0.0121272, 8.15322, 13.833)
+material_override = ExtResource("3_xa4ej")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Train/Head/Pivot/trem" index="15"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 8.52726, 19.6439)
+light_color = Color(1, 1, 0.137255, 1)
+light_energy = 0.353
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.515
+shadow_enabled = true
+
 [node name="Carvão" parent="Train" instance=ExtResource("2_coj7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.7)
 
+[node name="vagao-carvao" parent="Train/Carvão/wagon/Pivot" index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0390975, 0.497613, 0.0249968)
+
+[node name="carvao" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="0"]
+material_override = ExtResource("6_xpyht")
+
+[node name="rodas frente" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="4"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas traseira" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="5"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas meio" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="6"]
+material_override = ExtResource("2_5ds58")
+
+[node name="corpo" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="7"]
+material_override = ExtResource("4_4juyl")
+
+[node name="segura roda" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="8"]
+material_override = ExtResource("3_xa4ej")
+
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_auwxt")
@@ -31,4 +142,40 @@ shape = SubResource("BoxShape3D_auwxt")
 mesh = SubResource("BoxMesh_5m10p")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0414049, 0.999142, 0, -0.999142, -0.0414049, 0, 17.2781, 0)
+transform = Transform3D(1, 0, 0, 0, -0.0414049, 0.999142, 0, -0.999142, -0.0414049, -0.00418663, 17.2781, -0.0172386)
+shadow_enabled = true
+
+[node name="Ouro" parent="." instance=ExtResource("2_coj7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.64508)
+
+[node name="vagao-carvao" parent="Ouro/wagon/Pivot" index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0390975, 0.497613, 0.0249968)
+
+[node name="carvao" parent="Ouro/wagon/Pivot/vagao-carvao" index="0"]
+transform = Transform3D(-4.74151, 0, -4.90052e-06, 0, 1, 0, 1.54498e-06, 0, -15.0396, 0.537115, 12.1247, 9.11762)
+material_override = ExtResource("7_l1dvn")
+
+[node name="rodas frente" parent="Ouro/wagon/Pivot/vagao-carvao" index="4"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas traseira" parent="Ouro/wagon/Pivot/vagao-carvao" index="5"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas meio" parent="Ouro/wagon/Pivot/vagao-carvao" index="6"]
+material_override = ExtResource("2_5ds58")
+
+[node name="corpo" parent="Ouro/wagon/Pivot/vagao-carvao" index="7"]
+material_override = ExtResource("4_4juyl")
+
+[node name="segura roda" parent="Ouro/wagon/Pivot/vagao-carvao" index="8"]
+material_override = ExtResource("3_xa4ej")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i56wg")
+
+[editable path="Train"]
+[editable path="Train/Head/Pivot/trem"]
+[editable path="Train/Carvão"]
+[editable path="Train/Carvão/wagon/Pivot/vagao-carvao"]
+[editable path="Ouro"]
+[editable path="Ouro/wagon/Pivot/vagao-carvao"]
