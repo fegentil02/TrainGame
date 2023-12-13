@@ -132,6 +132,31 @@ material_override = ExtResource("4_4juyl")
 [node name="segura roda" parent="Train/Carvão/wagon/Pivot/vagao-carvao" index="8"]
 material_override = ExtResource("3_xa4ej")
 
+[node name="Ouro" parent="Train" instance=ExtResource("2_coj7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.64508)
+
+[node name="vagao-carvao" parent="Train/Ouro/wagon/Pivot" index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0390975, 0.497613, 0.0249968)
+
+[node name="carvao" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="0"]
+transform = Transform3D(-4.74151, 0, -4.90052e-06, 0, 1, 0, 1.54498e-06, 0, -15.0396, 0.537115, 12.1247, 9.11762)
+material_override = ExtResource("7_l1dvn")
+
+[node name="rodas frente" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="4"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas traseira" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="5"]
+material_override = ExtResource("2_5ds58")
+
+[node name="rodas meio" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="6"]
+material_override = ExtResource("2_5ds58")
+
+[node name="corpo" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="7"]
+material_override = ExtResource("4_4juyl")
+
+[node name="segura roda" parent="Train/Ouro/wagon/Pivot/vagao-carvao" index="8"]
+material_override = ExtResource("3_xa4ej")
+
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -1, 0)
 
@@ -145,31 +170,6 @@ mesh = SubResource("BoxMesh_5m10p")
 transform = Transform3D(1, 0, 0, 0, -0.0414049, 0.999142, 0, -0.999142, -0.0414049, -0.00418663, 17.2781, -0.0172386)
 shadow_enabled = true
 
-[node name="Ouro" parent="." instance=ExtResource("2_coj7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.64508)
-
-[node name="vagao-carvao" parent="Ouro/wagon/Pivot" index="1"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0390975, 0.497613, 0.0249968)
-
-[node name="carvao" parent="Ouro/wagon/Pivot/vagao-carvao" index="0"]
-transform = Transform3D(-4.74151, 0, -4.90052e-06, 0, 1, 0, 1.54498e-06, 0, -15.0396, 0.537115, 12.1247, 9.11762)
-material_override = ExtResource("7_l1dvn")
-
-[node name="rodas frente" parent="Ouro/wagon/Pivot/vagao-carvao" index="4"]
-material_override = ExtResource("2_5ds58")
-
-[node name="rodas traseira" parent="Ouro/wagon/Pivot/vagao-carvao" index="5"]
-material_override = ExtResource("2_5ds58")
-
-[node name="rodas meio" parent="Ouro/wagon/Pivot/vagao-carvao" index="6"]
-material_override = ExtResource("2_5ds58")
-
-[node name="corpo" parent="Ouro/wagon/Pivot/vagao-carvao" index="7"]
-material_override = ExtResource("4_4juyl")
-
-[node name="segura roda" parent="Ouro/wagon/Pivot/vagao-carvao" index="8"]
-material_override = ExtResource("3_xa4ej")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i56wg")
 
@@ -177,5 +177,5 @@ environment = SubResource("Environment_i56wg")
 [editable path="Train/Head/Pivot/trem"]
 [editable path="Train/Carvão"]
 [editable path="Train/Carvão/wagon/Pivot/vagao-carvao"]
-[editable path="Ouro"]
-[editable path="Ouro/wagon/Pivot/vagao-carvao"]
+[editable path="Train/Ouro"]
+[editable path="Train/Ouro/wagon/Pivot/vagao-carvao"]
