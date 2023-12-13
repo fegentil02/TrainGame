@@ -14,7 +14,7 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfewa"]
 vertex_color_is_srgb = true
-albedo_color = Color(0.745098, 0.815686, 0.0745098, 1)
+albedo_color = Color(0.92549, 0.678431, 0.266667, 1)
 metallic_specular = 0.15
 
 [sub_resource type="BoxMesh" id="BoxMesh_5m10p"]
